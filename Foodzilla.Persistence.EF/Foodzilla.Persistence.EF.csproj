@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Swagger.Ui.Extensions" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodZilla.Domain\Foodzilla.Domain.csproj" />
+    <ProjectReference Include="..\FoodZilla.Application\Foodzilla.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Foodzilla.Kernel">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Persistence.EF\bin\Debug\net7.0\Foodzilla.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Foodzilla.Kernel.Contract">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Contract\bin\Debug\net7.0\Foodzilla.Kernel.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="Foodzilla.Kernel.Persistence.EF">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Persistence.EF\bin\Debug\net7.0\Foodzilla.Kernel.Persistence.EF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

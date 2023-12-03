@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Gateways\ExternalRepositories\" />
+    <Folder Include="Gateways\CacheRepositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Foodzilla.Domain\Foodzilla.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Foodzilla.Kernel">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel\bin\Debug\net7.0\Foodzilla.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Foodzilla.Kernel.Contract">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Contract\bin\Debug\net7.0\Foodzilla.Kernel.Contract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Foodzilla.Kernel">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel\bin\Debug\net7.0\Foodzilla.Kernel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

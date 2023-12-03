@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Foodzilla.Presentation.Protos";
+
+package Customer;
+
+service CustomerRpcService{
+	rpc GetCustomerRpc(GetCustomerRpcQuery) returns (GetCustomerRpcResponse);
+}
+
+message GetCustomerRpcQuery{
+	int32 id = 1;
+}
+
+message GetCustomerRpcResponse{
+	string name = 1;
+	string family = 2;
+	string nationalCode = 3;
+}

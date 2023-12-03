@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Foodzilla.Kernel">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Persistence.EF\bin\Debug\net7.0\Foodzilla.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Foodzilla.Kernel.Persistence.Redis">
+      <HintPath>..\..\Foodzilla.Kernel\Foodzilla.Kernel.Persistence.Redis\bin\Debug\net7.0\Foodzilla.Kernel.Persistence.Redis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
