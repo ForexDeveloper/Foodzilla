@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Foodzilla.Persistence.EF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231204183622_Company")]
+    [Migration("20231204194149_Company")]
     partial class Company
     {
         /// <inheritdoc />
