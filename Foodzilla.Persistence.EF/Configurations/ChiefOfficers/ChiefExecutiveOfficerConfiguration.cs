@@ -13,17 +13,19 @@ public sealed class ChiefExecutiveOfficerConfiguration : IdentityConfiguration<C
 
         builder.HasOne(p => p.ChiefMarketingOfficer)
                .WithOne(p => p.ChiefExecutiveOfficer)
-               .HasForeignKey(nameof(ChiefProductOfficer.ChiefExecutiveOfficerId))
+               .HasForeignKey<ChiefMarketingOfficer>()
                .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(p => p.ChiefProductOfficer)
                .WithOne(p => p.ChiefExecutiveOfficer)
-               .HasForeignKey(nameof(ChiefProductOfficer.ChiefExecutiveOfficerId))
+               .HasForeignKey<ChiefProductOfficer>()
                .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(p => p.ChiefTechnicalOfficer)
                .WithOne(p => p.ChiefExecutiveOfficer)
-               .HasForeignKey(nameof(ChiefTechnicalOfficer.ChiefExecutiveOfficerId))
+               .HasForeignKey<ChiefTechnicalOfficer>()
                .OnDelete(DeleteBehavior.Restrict);
+
+        base.Configure(builder);
     }
 }

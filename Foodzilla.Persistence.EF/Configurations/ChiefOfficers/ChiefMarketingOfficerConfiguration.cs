@@ -8,6 +8,8 @@ public sealed class ChiefMarketingOfficerConfiguration : IdentityConfiguration<C
 {
     public override void Configure(EntityTypeBuilder<ChiefMarketingOfficer> builder)
     {
+        base.Configure(builder);
+
         builder.Property(p => p.AssignedOrganization).HasMaxLength(ColumnLength.Length250).IsRequired();
     }
 }

@@ -1,7 +1,7 @@
-﻿using Foodzilla.Domain.Aggregates.Customer;
-using Foodzilla.Domain.Enums;
-using Foodzilla.Persistence.EF.Data;
+﻿using Foodzilla.Domain.Enums;
 using Microsoft.AspNetCore.Builder;
+using Foodzilla.Persistence.EF.Data;
+using Foodzilla.Domain.Aggregates.Customer;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Foodzilla.Persistence.EF.Extensions;

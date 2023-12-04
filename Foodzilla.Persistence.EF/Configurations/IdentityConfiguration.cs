@@ -11,6 +11,8 @@ public abstract class IdentityConfiguration<TEntity> : EntityConfiguration<TEnti
 {
     public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
+        builder.Property("Id").ValueGeneratedNever();
+
         builder.Property(p => p.Age).IsRequired();
         builder.Property(p => p.IsFired).IsRequired();
         builder.Property(p => p.Height).IsRequired(false);
@@ -18,9 +20,9 @@ public abstract class IdentityConfiguration<TEntity> : EntityConfiguration<TEnti
         builder.Property(p => p.UniqueIdentifier).IsRequired();
         builder.Property(p => p.DaysOfVacation).IsRequired(false);
 
-        builder.Property(p => p.Graduation).HasConversion<Graduation>().IsRequired();
-        builder.Property(p => p.Experience).HasConversion<Experience>().IsRequired();
-        builder.Property(p => p.EyeColor).HasConversion<EyeColor>().IsRequired(false);
+        builder.Property(p => p.Graduation).HasConversion<int>().IsRequired();
+        builder.Property(p => p.Experience).HasConversion<int>().IsRequired();
+        builder.Property(p => p.EyeColor).HasConversion<int>().IsRequired(false);
 
         builder.Property(p => p.Name).HasMaxLength(ColumnLength.Length250).IsRequired();
         builder.Property(p => p.Address).HasMaxLength(ColumnLength.MaxLength).IsRequired();

@@ -65,6 +65,11 @@ public abstract class Identity<TKey> : Entity<TKey>, IIdentity where TKey : stru
         CreatedAt = DateTimeOffset.Now.AddYears(-1);
     }
 
+    protected Identity()
+    {
+
+    }
+
     public virtual bool IsPatched()
     {
         return Name == "Patched !" &&

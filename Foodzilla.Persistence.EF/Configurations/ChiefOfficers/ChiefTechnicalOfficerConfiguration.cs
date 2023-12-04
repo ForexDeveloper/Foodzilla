@@ -8,6 +8,8 @@ public sealed class ChiefTechnicalOfficerConfiguration : IdentityConfiguration<C
 {
     public override void Configure(EntityTypeBuilder<ChiefTechnicalOfficer> builder)
     {
+        base.Configure(builder);
+
         builder.Property(p => p.AssignedOrganization).HasMaxLength(ColumnLength.Length250).IsRequired();
     }
 }
