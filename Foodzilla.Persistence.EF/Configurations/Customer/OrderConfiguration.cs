@@ -4,7 +4,7 @@ using Foodzilla.Kernel.Persistence.EF.Commons;
 using Foodzilla.Kernel.Persistence.EF.Configurations;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Foodzilla.Persistence.EF.Configurations;
+namespace Foodzilla.Persistence.EF.Configurations.Customer;
 
 public sealed class OrderConfiguration : EntityConfiguration<Order>
 {

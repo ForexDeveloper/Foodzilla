@@ -1,6 +1,6 @@
-﻿using Foodzilla.Domain.Aggregates.ChiefOfficers;
+﻿using Foodzilla.Kernel.Patch;
 using Foodzilla.Domain.Aggregates.Seniors;
-using Foodzilla.Kernel.Patch;
+using Foodzilla.Domain.Aggregates.ChiefOfficers;
 
 namespace Foodzilla.Domain.Aggregates.TeamLeads;
 

@@ -1,9 +1,9 @@
-﻿using Foodzilla.Domain.Aggregates.Customer;
+﻿namespace Foodzilla.Persistence.EF.Configurations.Customer;
+
+using Foodzilla.Domain.Aggregates.Customer;
 using Foodzilla.Kernel.Persistence.EF.Commons;
 using Foodzilla.Kernel.Persistence.EF.Configurations;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Foodzilla.Persistence.EF.Configurations;
 
 public sealed class CustomerConfiguration : EntityConfiguration<Customer>
 {

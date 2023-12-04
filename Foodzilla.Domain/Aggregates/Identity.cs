@@ -2,7 +2,7 @@
 
 namespace Foodzilla.Domain.Aggregates;
 
-public abstract class Identity<TKey> : Entity<TKey> where TKey : struct
+public abstract class Identity<TKey> : Entity<TKey>, IIdentity where TKey : struct
 {
     public string Name { get; init; }
 
@@ -10,7 +10,7 @@ public abstract class Identity<TKey> : Entity<TKey> where TKey : struct
 
     public string NationalCode { get; init; }
 
-    public string PersonalCode { get;  init; }
+    public string PersonalCode { get; init; }
 
     public string Address { get; init; }
 

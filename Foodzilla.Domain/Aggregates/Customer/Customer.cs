@@ -93,7 +93,7 @@ public sealed class Customer : Entity<int>, IAggregateRoot, IPatchValidator
 
     public void SetName()
     {
-        SetId(1);
+        SetIdentity(1);
         Name = "Attached";
     }
 

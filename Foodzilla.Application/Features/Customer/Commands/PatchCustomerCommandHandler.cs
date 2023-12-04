@@ -26,7 +26,7 @@ public sealed class PatchCustomerCommandHandler : IRequestHandler<PatchCustomerC
 
         foreach (var customer in customers)
         {
-            var result = patchOperator.ApplyOneToOne(customer);
+            var result = patchOperator.ApplyOneToOne(customer, null, null);
 
             if (!result)
             {

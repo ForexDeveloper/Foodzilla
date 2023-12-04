@@ -1,6 +1,6 @@
-﻿using Foodzilla.Domain.Aggregates.Midlevels;
+﻿using Foodzilla.Kernel.Patch;
+using Foodzilla.Domain.Aggregates.Midlevels;
 using Foodzilla.Domain.Aggregates.TeamLeads;
-using Foodzilla.Kernel.Patch;
 
 namespace Foodzilla.Domain.Aggregates.Seniors;
 
