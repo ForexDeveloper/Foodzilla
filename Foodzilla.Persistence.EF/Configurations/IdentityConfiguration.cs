@@ -11,7 +11,7 @@ public abstract class IdentityConfiguration<TEntity> : EntityConfiguration<TEnti
 {
     public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
-        builder.Property("Id").ValueGeneratedNever();
+        //builder.Property("Id").ValueGeneratedNever();
 
         builder.Property(p => p.Age).IsRequired();
         builder.Property(p => p.IsFired).IsRequired();

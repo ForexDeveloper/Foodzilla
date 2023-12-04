@@ -7,6 +7,8 @@ using Foodzilla.Domain.Aggregates.Midlevels;
 using Foodzilla.Domain.Aggregates.Seniors;
 using Foodzilla.Domain.Aggregates.TeamLeads;
 using Foodzilla.Kernel.Extension;
+using Foodzilla.Persistence.EF.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Foodzilla.Persistence.EF;
 
@@ -77,12 +79,12 @@ public static class SeedEngine
 
     private static Guid[] UniqueIdentifiers => new[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
-    public static List<ChiefExecutiveOfficer> CreateChiefExecutiveOfficers(int count)
+    public static List<ChiefExecutiveOfficer> CreateChiefExecutiveOfficers(int count, ApplicationDbContext dbContext)
     {
         var random = new Random();
         var chiefExecutiveOfficers = new List<ChiefExecutiveOfficer>();
 
-        for (var officerId = count - 4; officerId <= count; officerId++)
+        for (var officerId = 1; officerId <= count; officerId++)
         {
             int index = random.Next(0, 6);
 
@@ -124,7 +126,12 @@ public static class SeedEngine
             chiefExecutiveOfficer.AddChiefMarketingOfficer(chiefMarketingOfficer);
             chiefExecutiveOfficer.AddChiefTechnicalOfficer(chiefTechnicalOfficer);
 
-            for (int teamLeadId = count - 4; teamLeadId <= count; teamLeadId++)
+            dbContext.ChiefProductOfficers.AsNoTracking().Add(chiefProductOfficer);
+            dbContext.ChiefExecutiveOfficers.Add(chiefExecutiveOfficer);
+            dbContext.ChiefTechnicalOfficers.Add(chiefTechnicalOfficer);
+            dbContext.ChiefMarketingOfficers.Add(chiefMarketingOfficer);
+
+            for (int teamLeadId = 1; teamLeadId <= count; teamLeadId++)
             {
                 var technicalTeamLead = TechnicalTeamLead.Create(teamLeadId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                     graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, chiefTechnicalOfficer.Id);
@@ -149,7 +156,13 @@ public static class SeedEngine
 
                 chiefMarketingOfficer.AddLeadMarketing(marketingTeamLead);
 
-                for (int seniorId = count - 4; seniorId <= count; seniorId++)
+                dbContext.ProductTeamLeads.Add(productTeamLead);
+                dbContext.TechnicalTeamLeads.Add(technicalTeamLead);
+                dbContext.QaTestingTeamLeads.Add(qATestingTeamLead);
+                dbContext.MarketingTeamLeads.Add(marketingTeamLead);
+                dbContext.ScrumMasterTeamLeads.Add(scrumMasterTeamLead);
+
+                for (int seniorId = 1; seniorId <= count; seniorId++)
                 {
                     var seniorDeveloper = SeniorDeveloper.Create(seniorId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                         graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, technicalTeamLead.Id);
@@ -171,7 +184,14 @@ public static class SeedEngine
                         graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, marketingTeamLead.Id);
                     marketingTeamLead.AddSeniorMarketing(seniorMarketing);
 
-                    for (int midlevelId = count - 4; midlevelId <= count; midlevelId++)
+
+                    dbContext.SeniorDevelopers.Add(seniorDeveloper);
+                    dbContext.SeniorMarketings.Add(seniorMarketing);
+                    dbContext.SeniorQaTestings.Add(seniorQaTesting);
+                    dbContext.SeniorScrumMasters.Add(seniorScrumMaster);
+                    dbContext.SeniorProductManagers.Add(seniorProductManager);
+
+                    for (int midlevelId = 1; midlevelId <= count; midlevelId++)
                     {
                         var midlevelDeveloper = MidlevelDeveloper.Create(midlevelId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                             graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, seniorDeveloper.Id);
@@ -185,7 +205,11 @@ public static class SeedEngine
                             graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, seniorMarketing.Id);
                         seniorMarketing.AddMidlevelMarketing(midlevelMarketing);
 
-                        for (int juniorId = count - 4; juniorId <= count; juniorId++)
+                        dbContext.MidlevelDevelopers.Add(midlevelDeveloper);
+                        dbContext.MidlevelMarketings.Add(midlevelMarketing); 
+                        dbContext.MidlevelProductManagers.Add(midlevelProductManager);
+
+                        for (int juniorId = 1; juniorId <= count; juniorId++)
                         {
                             var juniorDeveloper = JuniorDeveloper.Create(juniorId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                                 graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, midlevelDeveloper.Id);
@@ -199,7 +223,11 @@ public static class SeedEngine
                                 graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, midlevelMarketing.Id);
                             midlevelMarketing.AddJuniorMarketing(juniorMarketing);
 
-                            for (int fresherId = count - 4; fresherId <= count; fresherId++)
+                            dbContext.JuniorDevelopers.Add(juniorDeveloper);
+                            dbContext.JuniorMarketings.Add(juniorMarketing);
+                            dbContext.JuniorProductManagers.Add(juniorProductManager);
+
+                            for (int fresherId = 1; fresherId <= count; fresherId++)
                             {
                                 var fresherDeveloper = FresherDeveloper.Create(fresherId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                                     graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, juniorDeveloper.Id);
@@ -212,17 +240,14 @@ public static class SeedEngine
                                 var fresherMarketing = FresherMarketing.Create(fresherId, otherLevelName, otherLevelLastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, false, uniqueIdentifier, eyeColor,
                                     graduation, experience, modifiedDate, birthDate, contractDateEnd, contractDateStart, juniorMarketing.Id);
                                 juniorMarketing.AddFresherMarketing(fresherMarketing);
+
+                                dbContext.FresherDevelopers.Add(fresherDeveloper);
+                                dbContext.FresherMarketings.Add(fresherMarketing);
+                                dbContext.FresherProductManagers.Add(fresherProductManager);
                             }
                         }
                     }
                 }
-            }
-
-            count = count + 5;
-
-            if (count > 11)
-            {
-                break;
             }
         }
 

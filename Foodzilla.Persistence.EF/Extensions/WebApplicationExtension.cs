@@ -42,7 +42,100 @@ public static class WebApplicationExtension
                 //context.Customers.AddRange(customer1, customer2, customer3, customer3, customer4, customer5, customer6, customer7, customer8, customer9, customer10,
                 //    customer10, customer11, customer12, customer13, customer14);
 
-                context.ChiefExecutiveOfficers.AddRange(SeedEngine.CreateChiefExecutiveOfficers(5));
+                //var ceoList = SeedEngine.CreateChiefExecutiveOfficers(2, context);
+
+                //foreach (var ceo in ceoList)
+                //{
+                //    context.ChiefExecutiveOfficers.Add(ceo);
+
+                //    var cpo = ceo.ChiefProductOfficer;
+                //    var cto = ceo.ChiefTechnicalOfficer;
+                //    var cmo = ceo.ChiefMarketingOfficer;
+
+                //    context.ChiefExecutiveOfficers.Add(ceo);
+                //    context.ChiefTechnicalOfficers.Add(cto);
+                //    context.ChiefMarketingOfficers.Add(cmo);
+
+                //    foreach (var lead in cto.TechnicalTeamLeads)
+                //    {
+                //        context.TechnicalTeamLeads.Add(lead);
+
+                //        context.SeniorDevelopers.AddRange(lead.Seniors);
+
+                //        foreach (var senior in lead.Seniors)
+                //        {
+                //            context.MidlevelDevelopers.AddRange(senior.Midlevels);
+
+                //            foreach (var midlevel in senior.Midlevels)
+                //            {
+                //                context.JuniorDevelopers.AddRange(midlevel.Juniors);
+
+                //                foreach (var junior in midlevel.Juniors)
+                //                {
+                //                    context.FresherDevelopers.AddRange(junior.Freshers);
+                //                }
+                //            }
+                //        }
+                //    }
+
+                //    foreach (var lead in cto.QaTestingTeamLeads)
+                //    {
+                //        context.QaTestingTeamLeads.Add(lead);
+
+                //        context.SeniorQaTestings.AddRange(lead.Seniors);
+                //    }
+
+                //    foreach (var lead in cpo.ProductTeamLeads)
+                //    {
+                //        context.ProductTeamLeads.Add(lead);
+
+                //        context.SeniorProductManagers.AddRange(lead.Seniors);
+
+                //        foreach (var senior in lead.Seniors)
+                //        {
+                //            context.MidlevelProductManagers.AddRange(senior.Midlevels);
+
+                //            foreach (var midlevel in senior.Midlevels)
+                //            {
+                //                context.JuniorProductManagers.AddRange(midlevel.Juniors);
+
+                //                foreach (var junior in midlevel.Juniors)
+                //                {
+                //                    context.FresherProductManagers.AddRange(junior.Freshers);
+                //                }
+                //            }
+                //        }
+                //    }
+
+                //    foreach (var lead in cpo.ScrumMasterTeamLeads)
+                //    {
+                //        context.ScrumMasterTeamLeads.Add(lead);
+
+                //        context.SeniorScrumMasters.AddRange(lead.Seniors);
+                //    }
+
+                //    foreach (var lead in cmo.MarketingTeamLeads)
+                //    {
+                //        context.MarketingTeamLeads.Add(lead);
+
+                //        context.SeniorMarketings.AddRange(lead.Seniors);
+
+                //        foreach (var senior in lead.Seniors)
+                //        {
+                //            context.MidlevelMarketings.AddRange(senior.Midlevels);
+
+                //            foreach (var midlevel in senior.Midlevels)
+                //            {
+                //                context.JuniorMarketings.AddRange(midlevel.Juniors);
+
+                //                foreach (var junior in midlevel.Juniors)
+                //                {
+                //                    context.FresherMarketings.AddRange(junior.Freshers);
+                //                }
+                //            }
+                //        }
+                //    }
+                //}
 
                 context.SaveChanges();
             }

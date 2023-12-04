@@ -40,7 +40,9 @@ public sealed class AddCustomerCommandHandler : IRequestHandler<AddCustomerComma
             DateTime.Now,
             null);
 
-        await _customerRepository.AddAsync(customer);
+        _customerRepository.Add();
+
+        //await _customerRepository.AddAsync(customer);
 
         await _customerRepository.UnitOfWork.SaveChangesAsync();
 

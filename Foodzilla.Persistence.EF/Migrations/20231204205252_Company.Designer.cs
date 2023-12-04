@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Foodzilla.Persistence.EF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231204194149_Company")]
+    [Migration("20231204205252_Company")]
     partial class Company
     {
         /// <inheritdoc />
@@ -28,7 +28,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.ChiefOfficers.ChiefExecutiveOfficer", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -125,7 +128,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.ChiefOfficers.ChiefMarketingOfficer", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -219,7 +225,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.ChiefOfficers.ChiefProductOfficer", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -313,7 +322,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.ChiefOfficers.ChiefTechnicalOfficer", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -577,7 +589,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Freshers.FresherDeveloper", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -665,7 +680,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Freshers.FresherMarketing", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -753,7 +771,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Freshers.FresherProductManager", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -841,7 +862,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Juniors.JuniorDeveloper", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -929,7 +953,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Juniors.JuniorMarketing", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1017,7 +1044,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Juniors.JuniorProductManager", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1105,7 +1135,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Midlevels.MidlevelDeveloper", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1193,7 +1226,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Midlevels.MidlevelMarketing", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1281,7 +1317,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Midlevels.MidlevelProductManager", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1369,7 +1408,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Seniors.SeniorDeveloper", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1457,7 +1499,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Seniors.SeniorMarketing", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1545,7 +1590,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Seniors.SeniorProductManager", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1633,7 +1681,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Seniors.SeniorQaTesting", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1721,7 +1772,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.Seniors.SeniorScrumMaster", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1809,7 +1863,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.TeamLeads.MarketingTeamLead", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1897,7 +1954,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.TeamLeads.ProductTeamLead", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -1985,7 +2045,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.TeamLeads.QaTestingTeamLead", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -2073,7 +2136,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.TeamLeads.ScrumMasterTeamLead", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -2161,7 +2227,10 @@ namespace Foodzilla.Persistence.EF.Migrations
             modelBuilder.Entity("Foodzilla.Domain.Aggregates.TeamLeads.TechnicalTeamLead", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
