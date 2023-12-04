@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Contracts\" />
+    <Compile Remove="Common\**" />
+    <Compile Remove="Contracts\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="Contracts\**" />
+    <None Remove="Common\**" />
+    <None Remove="Contracts\**" />
   </ItemGroup>
 
   <ItemGroup>
