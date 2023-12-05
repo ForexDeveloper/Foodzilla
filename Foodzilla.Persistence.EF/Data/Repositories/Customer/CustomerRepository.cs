@@ -17,9 +17,4 @@ public sealed class CustomerRepository : Repository<ApplicationDbContext, Custom
         DbContext.Customers.Attach(customer);
         DbContext.Entry(customer).Property("Name").IsModified = true;
     }
-
-    public List<ChiefExecutiveOfficer> Add()
-    {
-        return SeedEngine.CreateChiefExecutiveOfficers(2, DbContext);
-    }
 }
