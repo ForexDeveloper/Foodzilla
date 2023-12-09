@@ -13,7 +13,7 @@ public sealed class SeniorScrumMaster : Identity<long>, IPatchValidator
         : base(name, lastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, isFired, uniqueIdentifier, eyeColor, graduation, experience, modifiedDate, birthDate, contraDateEnd, contraDateStart)
     {
         SetIdentity(id);
-        ScrumMasterTeamLeadId = scrumMasterTeamLeadId;
+        //ScrumMasterTeamLeadId = scrumMasterTeamLeadId;
     }
 
     private SeniorScrumMaster()

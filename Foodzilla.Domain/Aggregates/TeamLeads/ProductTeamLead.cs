@@ -16,7 +16,7 @@ public sealed class ProductTeamLead : Identity<int>, IPatchValidator
         : base(name, lastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, isFired, uniqueIdentifier, eyeColor, graduation, experience, modifiedDate, birthDate, contraDateEnd, contraDateStart)
     {
         SetIdentity(id);
-        ChiefProductOfficerId = chiefProductOfficerId;
+        //ChiefProductOfficerId = chiefProductOfficerId;
     }
 
     private ProductTeamLead()

@@ -16,7 +16,7 @@ public sealed class MarketingTeamLead : Identity<int>, IPatchValidator
         : base(name, lastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, isFired, uniqueIdentifier, eyeColor, graduation, experience, modifiedDate, birthDate, contraDateEnd, contraDateStart)
     {
         SetIdentity(id);
-        ChiefMarketingOfficerId = chiefMarketingOfficerId;
+        //ChiefMarketingOfficerId = chiefMarketingOfficerId;
     }
 
     private MarketingTeamLead()

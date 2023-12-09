@@ -1,14 +1,12 @@
 ﻿using System.Dynamic;
-using Foodzilla.Domain.Aggregates;
-using Foodzilla.Domain.Aggregates.ChiefOfficers;
-using Foodzilla.Domain.Aggregates.Freshers;
-using Foodzilla.Domain.Aggregates.Juniors;
-using Foodzilla.Domain.Aggregates.Midlevels;
-using Foodzilla.Domain.Aggregates.Seniors;
-using Foodzilla.Domain.Aggregates.TeamLeads;
 using Foodzilla.Kernel.Extension;
-using Foodzilla.Persistence.EF.Data;
-using Microsoft.EntityFrameworkCore;
+using Foodzilla.Domain.Aggregates;
+using Foodzilla.Domain.Aggregates.Seniors;
+using Foodzilla.Domain.Aggregates.Juniors;
+using Foodzilla.Domain.Aggregates.Freshers;
+using Foodzilla.Domain.Aggregates.Midlevels;
+using Foodzilla.Domain.Aggregates.TeamLeads;
+using Foodzilla.Domain.Aggregates.ChiefOfficers;
 
 namespace Foodzilla.Persistence.EF;
 

@@ -16,7 +16,7 @@ public sealed class SeniorProductManager : Identity<long>, IPatchValidator
         : base(name, lastName, nationalCode, personalCode, address, age, daysOfVacation, height, weight, isFired, uniqueIdentifier, eyeColor, graduation, experience, modifiedDate, birthDate, contraDateEnd, contraDateStart)
     {
         SetIdentity(id);
-        ProductTeamLeadId = productTeamLeadId;
+        //ProductTeamLeadId = productTeamLeadId;
     }
 
     private SeniorProductManager()
