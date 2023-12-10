@@ -4,15 +4,9 @@ namespace Foodzilla.Domain.Aggregates.ChiefOfficers;
 
 public sealed class ChiefExecutiveOfficer : ChiefUnitIdentity, IPatchValidator
 {
-    public int ChiefProductOfficerId { get; private set; }
-
     public ChiefProductOfficer? ChiefProductOfficer { get; private set; }
 
-    public int ChiefTechnicalOfficerId { get; private set; }
-
     public ChiefTechnicalOfficer? ChiefTechnicalOfficer { get; private set; }
-
-    public int ChiefMarketingOfficerId { get; private set; }
 
     public ChiefMarketingOfficer? ChiefMarketingOfficer { get; private set; }
 
@@ -35,20 +29,17 @@ public sealed class ChiefExecutiveOfficer : ChiefUnitIdentity, IPatchValidator
     public void AddChiefTechnicalOfficer(ChiefTechnicalOfficer chiefTechnicalOfficer)
     {
         ChiefTechnicalOfficer = chiefTechnicalOfficer;
-        ChiefTechnicalOfficerId = chiefTechnicalOfficer.Id;
     }
 
     public void AddChiefProductOfficer(ChiefProductOfficer chiefProductOfficer)
     {
         ChiefProductOfficer = chiefProductOfficer;
-        ChiefProductOfficerId = chiefProductOfficer.Id;
 
     }
 
     public void AddChiefMarketingOfficer(ChiefMarketingOfficer chiefMarketingOfficer)
     {
         ChiefMarketingOfficer = chiefMarketingOfficer;
-        ChiefMarketingOfficerId = chiefMarketingOfficer.Id;
     }
 
     public bool OnPatchCompleted()
